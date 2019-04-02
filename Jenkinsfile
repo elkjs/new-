@@ -4,7 +4,7 @@ pipeline {
     stage('checkout') {
       steps {
       logstash {
-        git(url: 'https://github.com/kshitizsh12/Simple.git', branch: 'master', changelog: true, credentialsId: '10sharma10', poll: true)
+        git(url: 'https://github.com/elkjs/new-.git', branch: 'master', changelog: true, credentialsId: '10sharma10', poll: true)
         }
        }
     }
