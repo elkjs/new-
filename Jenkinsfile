@@ -34,12 +34,13 @@ pipeline {
     }
  }
 
-# post {
-#         always {
-#              logstashSend failBuild: true, maxLines: 1000
-#              }
-#
-# 
-#  }
+ post {
+         always {
+              echo 'yes!!'
+             /* logstashSend failBuild: true, maxLines: 1000 */
+              }
+
+ 
+  }
 }
 
