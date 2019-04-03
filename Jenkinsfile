@@ -11,7 +11,7 @@ pipeline {
     stage('build') {
       steps {
       logstash {
-        build 'new 1'
+        bat 'mvn clean package'
         echo 'project build'
         }
       }
@@ -19,16 +19,25 @@ pipeline {
     stage('sonarqube') {
       steps {
       logstash {
-        build 'new1 sonar'
-        echo 'sonarqube'
+        withSonarQubeEnv('sonarserver'){
+                 bat 'mvn sonar:sonar' 
+                echo """" sonarqube1 """
+                 echo "sonarqube1currentResult: ${currentBuild.currentResult}"
+             }
        }
       }
     }
     stage('gate') {
       steps {
       logstash {
-        build 'new1gate'
-        echo 'sonar gate'
+        timeout(time: 1, unit: 'HOURS') {
+                    // Parameter indicates whether to set pipeline to UNSTABLE if Quality Gate fails
+                    // true = set pipeline to UNSTABLE, false = don't
+                    // Requires SonarQube Scanner for Jenkins 2.7+
+                    waitForQualityGate abortPipeline: true
+                         echo """" Sonargate1"""
+                         echo "sonargate11currentResult: ${currentBuild.currentResult}"
+}
        }
       }
     }
