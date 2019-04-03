@@ -4,7 +4,7 @@ pipeline {
     stage('build') {
       steps {
       logstash {
-        bat 'mvn clean package'
+        sh 'mvn clean package'
         echo 'project build'
         }
       }
@@ -13,7 +13,7 @@ pipeline {
       steps {
       logstash {
         withSonarQubeEnv('sonarserver'){
-                 bat 'mvn sonar:sonar' 
+                 sh 'mvn sonar:sonar' 
                 echo """" sonarqube1 """
                  echo "sonarqube1currentResult: ${currentBuild.currentResult}"
              }
