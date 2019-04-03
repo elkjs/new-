@@ -16,7 +16,7 @@ pipeline {
     stage('sonarqube') {
       steps {
       logstash {
-        withSonarQubeEnv('sonarserver'){
+        withSonarQubeEnv('sonarqube'){
                  sh 'mvn sonar:sonar' 
                 echo """" sonarqube1 """
                  echo "sonarqube1currentResult: ${currentBuild.currentResult}"
