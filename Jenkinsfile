@@ -45,8 +45,6 @@ pipeline {
               echo 'yes!!'
              /* logstashSend failBuild: true, maxLines: 1000 */
               }
-
- 
   }
 }
 
