@@ -1,3 +1,4 @@
+@Library('kartiklib') _
 pipeline {
  agent any
  tools {
@@ -38,6 +39,12 @@ pipeline {
        }
       }
     }
+ }
+ 
+ stage('shared'){
+  steps{
+      sayHello()
+  } 
  }
 
  post {
