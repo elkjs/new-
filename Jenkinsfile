@@ -44,6 +44,7 @@ pipeline {
  stage('shared'){
   steps{
       sayHello()
+   
   } 
  }
 
