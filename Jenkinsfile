@@ -39,15 +39,16 @@ pipeline {
        }
       }
     }
- }
+ 
  
  stage('shared') {
   steps {
       sayHello()
    
-  } 
+   } 
+  }
  }
-
+ 
  post {
          always {
               echo 'yes!!'
