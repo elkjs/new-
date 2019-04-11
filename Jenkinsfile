@@ -46,7 +46,7 @@ pipeline {
  stage('shared') {
   steps {
    script{
-       utlis.mvn 'clean package'
+       utlis.mvn(package)
           }
    
    } 
