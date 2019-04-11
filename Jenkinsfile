@@ -1,5 +1,5 @@
 @Library('kartiklib') _
-def utils = new Utilities(this)
+def h = new Shell(this)
 
 pipeline {
  agent any
@@ -46,7 +46,7 @@ pipeline {
  stage('shared') {
   steps {
    script{
-       utlis.mvn(package)
+       h.cmmddd()
           }
    
    } 
