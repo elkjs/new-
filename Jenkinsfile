@@ -1,4 +1,6 @@
 @Library('kartiklib') _
+def utils = new Utilities(this)
+
 pipeline {
  agent any
  tools {
@@ -43,7 +45,9 @@ pipeline {
  
  stage('shared') {
   steps {
-      sayHello()
+   script{
+       utlis.mvn '-version'
+          }
    
    } 
   }
