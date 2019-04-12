@@ -48,6 +48,7 @@ pipeline {
   steps {
    script{
       build()
+       codecoverage()
        
           }
    
