@@ -16,6 +16,16 @@ pipeline {
         }
       }
     }
+  stage('test') {
+      steps {
+      logstash {
+        junittest()
+        echo 'project build'
+        }
+      }
+    }
+  
+  
     stage('sonarqube') {
       steps {
       logstash {
@@ -47,7 +57,7 @@ pipeline {
   steps {
    script{
        h.cmmddd()
-       junittest()
+       
           }
    
    } 
