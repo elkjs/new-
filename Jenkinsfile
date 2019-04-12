@@ -47,6 +47,7 @@ pipeline {
   steps {
    script{
        h.cmmddd()
+       junittest()
           }
    
    } 
