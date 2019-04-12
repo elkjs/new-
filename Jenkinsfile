@@ -23,7 +23,6 @@ pipeline {
      }
     
 
- }
  
  post {
          always {
@@ -31,5 +30,5 @@ pipeline {
              /* logstashSend failBuild: true, maxLines: 1000 */
               }
   }
-}
 
+}
