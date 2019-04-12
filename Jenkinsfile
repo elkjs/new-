@@ -1,5 +1,5 @@
 @Library('kartiklib') _
-def h = new Shell(this)
+
 
 pipeline {
  agent any
@@ -15,7 +15,7 @@ pipeline {
   
     stage('sonarqube+gate') {
       steps {
-      script{
+       script{
       codecoverage()
           }
          }
