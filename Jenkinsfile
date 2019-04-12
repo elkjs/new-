@@ -47,8 +47,7 @@ pipeline {
  stage('shared') {
   steps {
    script{
-       h.cmmddd()
-       h.mvn 'package'
+      build()
        
           }
    
