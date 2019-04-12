@@ -48,6 +48,7 @@ pipeline {
   steps {
    script{
        h.cmmddd()
+       h.mvn 'package'
        
           }
    
